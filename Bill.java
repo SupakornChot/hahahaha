@@ -28,13 +28,17 @@ public abstract class Bill {
     }
 
     public void setPromoPrice(Bill bill, double minPrice, double percentPro,double maxPro) {
-        this.promoPrice = promoPrice;
+        if(totalPrice>=minPrice){
+             promoPrice =  (maxPro*percentPro)/100;
+        }
     }
 
     @Override
     public String toString() {
         return "Bill{" + "billId=" + billId + ", cust=" + cust + ", totalPrice=" + totalPrice + ", promoPrice=" + promoPrice + '}';
     }
+
+    
     
     
 }
