@@ -8,9 +8,9 @@ public abstract class Bill {
     public Bill(Customer cust, double price) {
         this.cust = cust;
         this.totalPrice = price;
+        
     }
     
-
     public Customer getCust() {
         return cust;
     }
@@ -35,7 +35,9 @@ public abstract class Bill {
 
     @Override
     public String toString() {
-        return "Bill{" + "billId=" + billId + ", cust=" + cust + ", totalPrice=" + totalPrice + ", promoPrice=" + promoPrice + '}';
+        return "Customer Id : "+Customer.getCustId()
+                +"\nTotal Price = "+totalPrice+", Promotion Price= "+promoPrice
+                +"\nNet :"+(totalPrice-promoPrice) ;
     }
 
     
